@@ -1,0 +1,14 @@
+# proxmox.yml
+---
+- hosts: plex_app
+  connection: local
+  user: root
+  vars:
+    pve_node: bart
+    pve_apiuser: root@pam
+    pve_apipass: myAPIpassword
+    pve_api_host: pve1.domain.com
+    pve_hostname: "newhostname"
+    pve_template: local:vztmpl/debian-9.0-standard_9.5-1_amd64.tar.gz
+  roles:
+    - engonzal.proxmoxct
